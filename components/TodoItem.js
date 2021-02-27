@@ -1,4 +1,5 @@
 import {LitElement, html} from 'lit-element';
+import { style } from "./todo-style";
 
 class TodoItem extends LitElement {
   static get properties() {
@@ -7,10 +8,13 @@ class TodoItem extends LitElement {
       deleteItem: {type: Function},
     };
   }
+  static get styles() {
+    return [style];
+  }
   render() {
     return html`
-      <div>
-        <p>${this.item}</p>
+      <div class="todo-item">
+        <span>${this.item}</span>
       </div>
     `;
   }

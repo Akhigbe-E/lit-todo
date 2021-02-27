@@ -2,12 +2,17 @@ import {LitElement, html} from 'lit-element';
 import './TodoInput.js'
 import './TodoList.js'
 
+import { style } from "./todo-style";
+
 class TodoElement extends LitElement {
     static get properties(){
         return {
             list:{type:Array},
             todo:{type:String}
         }
+    }
+    static get styles() {
+        return [style];
     }
     constructor() {
         super();
@@ -35,14 +40,13 @@ class TodoElement extends LitElement {
     
     render() {
         return html`
-            <div style={display:inline-block, margin: 0 auto}>
-                <h1>😎 Lit Todo</h1>
-
+            <div class="todo-body">
+                <h1>😎 Lit Todo 😎</h1>
                 <todo-input
-                  todo=${this.todo}
-                 .onInput=${this.handleInput.bind(this)}
-                 .onKeyPress=${this.handleKeyPress.bind(this)}
-                 .createNewToDoItem=${this.createNewToDoItem.bind(this)}
+                todo=${this.todo}
+                .onInput=${this.handleInput.bind(this)}
+                .onKeyPress=${this.handleKeyPress.bind(this)}
+                .createNewToDoItem=${this.createNewToDoItem.bind(this)}
                 ></todo-input>
 
                 <todo-list .list=${this.list}></todo-list>

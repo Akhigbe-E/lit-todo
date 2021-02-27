@@ -1,4 +1,5 @@
 import {LitElement, html} from 'lit-element';
+import { style } from "./todo-style";
 
 class TodoInput extends LitElement {
   static get properties() {
@@ -9,9 +10,12 @@ class TodoInput extends LitElement {
       createNewToDoItem: {type: Function},
     };
   }
+  static get styles() {
+      return [style];
+  }
   render() {
     return html`
-    <div>
+    <div class="todo-input">
         <input
             type="text"
             .value=${this.todo}
@@ -19,7 +23,8 @@ class TodoInput extends LitElement {
             @keypress=${this.onKeyPress}
         />
         <button
-            @click=${this.createNewToDoItem}
+          class="todo-button"
+          @click=${this.createNewToDoItem}
         >Add</button>
     </div>
     `;
