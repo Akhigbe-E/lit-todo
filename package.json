@@ -1,0 +1,27 @@
+{
+  "name": "lit-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "es-dev-server --app-index index.html --node-resolve --watch --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akhigbe-E/lit-todo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akhigbe-E/lit-todo/issues"
+  },
+  "homepage": "https://github.com/Akhigbe-E/lit-todo#readme",
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  },
+  "devDependencies": {
+    "es-dev-server": "^2.1.0"
+  }
+}
